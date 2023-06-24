@@ -67,7 +67,7 @@ function App() {
           <Routes>
               <Route path="/about" element= {<About mode = {mode} />}/>
               {/* <Route exact path="/about" element= {<About mode = {mode}/>}/> */}
-              <Route path="/" element= {<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode = {mode}/>}/>
+              <Route path="/" element= {<TextForm showAlert={showAlert} heading="Try TextUtils-Word Counter, Character Counter, Remove extra spaces" mode = {mode}/>}/>
 
              </Routes>
         </div>
