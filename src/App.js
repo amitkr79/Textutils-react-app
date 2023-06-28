@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 import Alert from './components/Alert';
 import {
   BrowserRouter as Router,
-  // Link,
   Route,
   Routes,
 } from "react-router-dom";
@@ -29,23 +28,22 @@ function App() {
     }, 2000)
    }
 
+   const removeBodyClasses = ()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-success')
+   }
 
-  const toggleMode =()=>{
+  const toggleMode =(cls)=>{
+    removeBodyClasses();
+    document.body.classList.add('bg-'+cls)
     if(mode==='light')
     {
       setMode ('dark');
       document.body.style.backgroundColor = '#0c2143';
-      showAlert("Dark Mode has been enabled", "success");
-      // document.title = 'TextUtil - Dark Mode';
-      // setInterval(() => {
-      //   document.title = 'TextUtil - Install Now';
-        
-      // }, 2000);
-      // setInterval(() => {
-      //   document.title = 'TextUtil - Now';
-        
-      // }, 1500);
-    }
+      showAlert("Dark Mode has been enabled", "success");}
     else{
       setMode ('light');
       document.body.style.backgroundColor = 'white';
